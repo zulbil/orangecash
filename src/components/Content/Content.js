@@ -29,11 +29,11 @@ const Content = () => {
             </div>
 		    <div className="row mt-5">
 			<div className="col-lg-6">
-				
 				<div className="card mb-4 d-none">
 					<div className="card-header">
 						<h4>Bienvenu sur TT Cash</h4>
 					</div>
+
 					<div className="card-body">
 						<p>
 							Le principe du jeu est simple. Le but de ce jeu est de trouver le numéro sécret Tunisie Telecom. Tout au long du jeu vous avez droit à 8 tentatives et à une somme d'argent qui diminue au fur et à mesure que le temps s'écoule. Lorsque vous tapez un numéro vous trouverez des différentes couleurs sur les cases selon des cas bien différents 
