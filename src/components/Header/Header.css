@@ -1,0 +1,7 @@
+.navbar-brand {
+    font-size: 2em;
+    font-weight: 700;
+    color: #009db7;
+}
+
+.navbar-brand .orange { color: #f19952;}

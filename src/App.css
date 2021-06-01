@@ -1,0 +1,62 @@
+/*
+* #1c1726 ==> background App
+* #009db7 ===> right position
+* #f19952 ===> wrong position
+* #ff5c3b ====> not-exist
+*
+*
+* input color ==> #221b2e
+*/
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #1c1726;
+  color: #fff;
+}
+
+.btn-base {
+  background: #009db7;
+  color: white;
+  transform: none;
+  transition: background 0.2s ease-in, transform 0.2s ease-out;
+}
+
+.btn-base:hover {
+  background: #009cb7a2;
+  color: white;
+  transform: scale(1.1);
+}
+
+.custom-input-text:focus,
+.custom-input-text {
+  color: white;
+  background: #221b2e;
+  border: 1px solid #221b2e;
+  box-shadow: none;
+  padding: 1.2rem 2.4rem;
+  border-radius: 25px;
+}
+
+.custom-input-text::placeholder {
+  color: white;
+  font-size: 1.2em;
+}
+
+.circle {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4em;
+}
+
+.circle.right-position { background: #009db7; }
+.circle.not-exist { background: #6A9290; }
+.circle.wrong-position { background: #f19952;}
