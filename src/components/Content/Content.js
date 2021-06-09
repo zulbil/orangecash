@@ -7,6 +7,7 @@ import { helper } from './../../helpers'
 const Content = () => {
 
 	const [counter, setCounter]							=	useState(0)
+	const [amount, setAmount]							=	useState(4000)
 	const [start, setStart]								=	useState(false)
 	const [phoneNumbers, setPhoneNumbers] 				= 	useState(InitialGridItems)
 	const [secretPhoneNumber]							=	useState(helper.initSecretPhoneNumber())
@@ -26,12 +27,19 @@ const Content = () => {
 	const startGame = (e) =>  {
 		e.preventDefault()
 		setStart(!start)
+		changeAmount()
+	}
+
+	const changeAmount = () => {
+		setInterval(function () {
+			setAmount(amount-50)
+		}, 1000)
 	}
 	
     return (
         <div className="container main-content">
             <div className="row justify-content-around">
-                <h1 className="text-center"><span className="montant">3000</span> <span>$</span></h1>
+                <h1 className="text-center"><span className="montant">{amount}</span> <span>$</span></h1>
             </div>
 		    <div className="row mt-5">
 			<div className="col-lg-6">
