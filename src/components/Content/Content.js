@@ -23,31 +23,31 @@ const Content = () => {
 	}
 	
     return (
-        <div className="container">
-            <div className="row justify-content-around d-none">
-                <h1><span className="montant">4000</span> <span>DT</span></h1>
+        <div className="container main-content">
+            <div className="row justify-content-around">
+                <h1 className="text-center"><span className="montant">3000</span> <span>$</span></h1>
             </div>
 		    <div className="row mt-5">
 			<div className="col-lg-6">
-				<div className="card mb-4 d-none">
+				<div className="card mb-4">
 					<div className="card-header">
-						<h4>Bienvenu sur TT Cash</h4>
+						<h4>Bienvenu sur OrangeCash</h4>
 					</div>
 
 					<div className="card-body">
 						<p>
-							Le principe du jeu est simple. Le but de ce jeu est de trouver le numéro sécret Tunisie Telecom. Tout au long du jeu vous avez droit à 8 tentatives et à une somme d'argent qui diminue au fur et à mesure que le temps s'écoule. Lorsque vous tapez un numéro vous trouverez des différentes couleurs sur les cases selon des cas bien différents 
+							Le principe du jeu est simple. Le but de ce jeu est de trouver le numéro de téléphone secret Orange. Tout au long du jeu vous avez droit à 8 tentatives et à une somme d'argent qui diminue au fur et à mesure que le temps s'écoule. Lorsque vous tapez un numéro vous trouverez des différentes couleurs sur les cases selon des cas bien différents. 
 						</p>
 						<ul>
 							Les différentes couleurs sont :
 							<li>
-								<strong>Le jaune</strong>: indique que le chiffre que vous avez fourni existe dans le numéro secret mais n'est pas à la bonne position.
+								<strong className="text-right-position">Le bleu</strong>: indique que le chiffre que vous avez fourni existe dans le numéro secret et se trouve à la bonne position.
 							</li>
 							<li>
-								<strong>Le gris</strong>:  indique que le chiffre que vous avez fourni n'existe pas dans le numéro secret.
+								<strong className="text-wrong-position">L'orange</strong>: indique que le chiffre que vous avez fourni existe dans le numéro secret mais n'est pas à la bonne position.
 							</li>
 							<li>
-								<strong>Le bleu</strong>: indique que le chiffre que vous avez fourni existe dans le numéro secret et se trouve à la bonne position.
+								<strong className="text-not-exist">Le gris</strong>:  indique que le chiffre que vous avez fourni n'existe pas dans le numéro secret.
 							</li>
 						</ul>
 					

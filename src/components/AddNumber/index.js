@@ -18,7 +18,7 @@ const AddNumber = ({ onAdd }) => {
     }
 
     return (
-        <form className="form-number mb-4 col-10" onSubmit={submitPhoneNumber}>
+        <form className="form-number mb-4 col-12" onSubmit={submitPhoneNumber}>
             <input 
                 type="text" 
                 className="form-control custom-input-text" 

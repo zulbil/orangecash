@@ -48,8 +48,8 @@ body {
 }
 
 .circle {
-  width: 65px;
-  height: 65px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -57,6 +57,15 @@ body {
   font-size: 1.4em;
 }
 
-.circle.right-position { background: #009db7; }
-.circle.not-exist { background: #6A9290; }
-.circle.wrong-position { background: #f19952;}
+.right-position { background: #009db7; }
+.not-exist { background: #6A9290; }
+.wrong-position { background: #f19952;}
+
+.text-right-position { color: #009db7; }
+.text-not-exist { color: #6A9290; }
+.text-wrong-position { color: #f19952;}
+
+.main-content .card {
+  background: #221b2e;
+  border: 1px solid #221b2e;
+}
