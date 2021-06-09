@@ -8,10 +8,10 @@ const Content = () => {
 
 	const [counter, setCounter]							=	useState(0)
 	const [phoneNumbers, setPhoneNumbers] 				= 	useState(InitialGridItems)
-	const [secretPhoneNumber, setSecretPhoneNumber]		=	useState(helper.initSecretPhoneNumber())
+	const [secretPhoneNumber]							=	useState(helper.initSecretPhoneNumber())
 
 	const submitPhoneNumber  =	(phoneNumber) => {
-		if (counter < 7) {
+		if (counter < 8) {
 			const newPhoneNumber	=	helper.checkNumber(phoneNumber,secretPhoneNumber)
 			const gridNumber 		= 	phoneNumbers
 			gridNumber[counter] 	= 	newPhoneNumber

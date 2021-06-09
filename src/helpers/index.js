@@ -49,7 +49,7 @@ export const helper = {
             if (referenceNum.indexOf(num[i]) === i) {
               obj.number = num[i];
               obj.classStyle = "right-position";
-            } else if (referenceNum.indexOf(num[i]) != -1) {
+            } else if (referenceNum.indexOf(num[i]) !== -1) {
               obj.number = num[i];
               obj.classStyle = "wrong-position";
             } else {

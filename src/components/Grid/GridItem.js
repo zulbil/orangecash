@@ -1,13 +1,18 @@
+import PropTypes from 'prop-types'
 import Circle from './Circle'
 
-const GridItem = ({ phoneNumber, index }) => {
+const GridItem = ({ phoneNumber }) => {
     return (
-        <tr className={index} id={index}>
+        <tr>
             {phoneNumber.map((item, pos) => {
-                return <Circle key={pos} index={pos} digit={item} />
+                return <Circle key={pos} digit={item} />
             })}
         </tr>
     )
+}
+
+GridItem.prototypes = {
+    phoneNumber: PropTypes.array
 }
 
 export default GridItem

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import GridItem from './GridItem'
 
 const Grid = ({ phoneNumbers }) => {
@@ -7,12 +8,16 @@ const Grid = ({ phoneNumbers }) => {
             <table className="output mb-4">
                 <tbody>
                     {phoneNumbers.map(( item, index) => {
-                        return <GridItem key={index} index={index} phoneNumber={item} />
+                        return <GridItem key={index} phoneNumber={item} />
                     })}
                 </tbody>
             </table>
         </div>
     )
+}
+
+Grid.prototypes = {
+    phoneNumbers : PropTypes.array
 }
 
 export default Grid
