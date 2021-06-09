@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const AddNumber = ({ onAdd }) => {
+const AddNumber = ({ onAdd, start }) => {
     const [phoneNumber, setPhoneNumber] = useState('')
     const submitPhoneNumber = (e) => {
         e.preventDefault()
@@ -24,6 +24,7 @@ const AddNumber = ({ onAdd }) => {
                 className="form-control custom-input-text" 
                 placeholder="Entrez votre numéro" 
                 value={phoneNumber} 
+                disabled={!start}
                 onChange={(e) => setPhoneNumber(e.target.value)}
             />
             <span className="invalid-feedback"> Veuiler remplir le champ par un numéro valide</span>

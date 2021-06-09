@@ -7,11 +7,12 @@ import { helper } from './../../helpers'
 const Content = () => {
 
 	const [counter, setCounter]							=	useState(0)
+	const [start, setStart]								=	useState(false)
 	const [phoneNumbers, setPhoneNumbers] 				= 	useState(InitialGridItems)
 	const [secretPhoneNumber]							=	useState(helper.initSecretPhoneNumber())
 
 	const submitPhoneNumber  =	(phoneNumber) => {
-		if (counter < 8) {
+		if (counter < 7) {
 			const newPhoneNumber	=	helper.checkNumber(phoneNumber,secretPhoneNumber)
 			const gridNumber 		= 	phoneNumbers
 			gridNumber[counter] 	= 	newPhoneNumber
@@ -20,6 +21,11 @@ const Content = () => {
 		} else {
 			alert('Votre partie est terminé !!!')
 		}
+	}
+
+	const startGame = (e) =>  {
+		e.preventDefault()
+		setStart(!start)
 	}
 	
     return (
@@ -53,10 +59,10 @@ const Content = () => {
 					
 					</div>
 				</div>
-				<button className="btn btn-base btn-lg btn-start">Commencer le jeu</button>
+				<button className="btn btn-base btn-lg btn-start" onClick={startGame}>Commencer le jeu</button>
 			</div>
 			<div className="col-lg-6 row justify-content-center">
-				<AddNumber onAdd={submitPhoneNumber}/>
+				<AddNumber onAdd={submitPhoneNumber} start={start} />
 				<Grid phoneNumbers={phoneNumbers} />
 			</div>
 		</div>

@@ -69,3 +69,9 @@ body {
   background: #221b2e;
   border: 1px solid #221b2e;
 }
+
+.form-control:disabled, .form-control[readonly] {
+  background-color: #211a2d;
+  opacity: 1;
+  cursor: not-allowed;
+}
