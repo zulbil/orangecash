@@ -1,19 +1,22 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 const AddNumber = ({ onAdd, start }) => {
-    const [phoneNumber, setPhoneNumber] = useState('')
+    const [ error, setError ]       =   useState('')
+    const phoneNumber               =   useRef('')
+
     const submitPhoneNumber = (e) => {
         e.preventDefault()
-        if(!checkValidity(phoneNumber)) {
-            alert('Invalid phone Number')
+        setError('')
+        if(!checkValidity(phoneNumber.current.value)) {
+            setError('invalid phone number')
             return
         }
-        onAdd(phoneNumber)
-        setPhoneNumber('')
+        onAdd(phoneNumber.current.value)
+        phoneNumber.current.value = ''
     }
 
     const checkValidity = (num) => {
-        const regex = /^08(\d){8}$/gm;
+        const regex = /^(089|085|084|080)(\d){7}$/gm;
         return num.match(regex);
     }
 
@@ -23,11 +26,10 @@ const AddNumber = ({ onAdd, start }) => {
                 type="text" 
                 className="form-control custom-input-text" 
                 placeholder="Entrez votre numéro" 
-                value={phoneNumber} 
                 disabled={!start}
-                onChange={(e) => setPhoneNumber(e.target.value)}
+                ref={phoneNumber}
             />
-            <span className="invalid-feedback"> Veuiler remplir le champ par un numéro valide</span>
+            {error && <span className="invalid-feedback" style={{display: 'block'}}> Veuiler remplir le champ par un numéro orange valide</span>}
         </form>
     )
 }
