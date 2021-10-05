@@ -33,6 +33,19 @@ body {
   transform: scale(1.1);
 }
 
+.btn-custom-secondary {
+  background: #f19952;
+  color: white;
+  transform: none;
+  transition: background 0.2s ease-in, transform 0.2s ease-out;
+}
+
+.btn-custom-secondary:hover {
+  background: #f08c3a;
+  color: white;
+  transform: scale(1.1);
+}
+
 .custom-input-text:focus,
 .custom-input-text {
   color: white;

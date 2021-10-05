@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react'
 import { Button, Modal } from 'react-bootstrap';
 import PropTypes from 'prop-types'
+import './index.css'
 
 
 const CustomModal = ({ display, message }) => {
@@ -10,6 +11,7 @@ const CustomModal = ({ display, message }) => {
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+    const restartGame = () => window.location.reload();
     const triggerClick = () => {
         if(display) {
             btnEl.current.click()
@@ -26,17 +28,17 @@ const CustomModal = ({ display, message }) => {
             Launch demo modal
         </Button>
 
-        <Modal show={show} onHide={handleClose}>
+        <Modal show={show} backdrop="static" onHide={handleClose}>
             <Modal.Header closeButton>
                 <Modal.Title>Modal heading</Modal.Title>
             </Modal.Header>
-            <Modal.Body>{message}</Modal.Body>
+            <Modal.Body><p>{message}</p></Modal.Body>
             <Modal.Footer>
                 <Button variant="secondary" onClick={handleClose}>
-                    Close
+                    Fermer
                 </Button>
-                <Button variant="primary" onClick={handleClose}>
-                    Save Changes
+                <Button className="btn-custom-secondary" variant="primary" onClick={restartGame}>
+                    Rejouer la partie
                 </Button>
             </Modal.Footer>
         </Modal>
@@ -44,7 +46,7 @@ const CustomModal = ({ display, message }) => {
   );
 }
 
-Modal.propTypes = {
+CustomModal.propTypes = {
     display: PropTypes.bool,
     message: PropTypes.string
 }

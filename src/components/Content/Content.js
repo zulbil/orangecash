@@ -16,6 +16,7 @@ const Content = () => {
 	const [message, setMessage]							=	useState('')
 	const [showModal, setShowModal]						=	useState(false)
 	const amountRef 									= 	useRef(0)
+	let intervalFunction								=	null
 
 	
 	amountRef.current 	= amount
@@ -39,19 +40,25 @@ const Content = () => {
 	}
 
 	const changeAmount = () => {
-		setInterval(function () {
+		intervalFunction = setInterval(function () {
 			setAmount(amountRef.current-50)
 		}, 1000)
+	}
+
+	const stopGame = () => {
+		clearInterval(intervalFunction);
 	}
 
 	const showMessage = () => {
 		if(winGame) {
 			setMessage('Vous avez gagné')
 			setShowModal(true)
+			stopGame()
 		}
 		if( counter === 7 || amount === 0) {
 			setMessage('Vous avez perdu')
 			setShowModal(true)
+			stopGame()
 		}
 	}
 
