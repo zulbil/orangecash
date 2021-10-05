@@ -9,9 +9,10 @@ const CustomModal = ({ display, message }) => {
     const btnEl             =   useRef(null) 
     const [show, setShow]   =   useState(false) 
 
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
-    const restartGame = () => window.location.reload();
+    const handleClose   =   () => setShow(false);
+    const handleShow    =   () => setShow(true);
+    const restartGame   =   () => window.location.reload();
+    
     const triggerClick = () => {
         if(display) {
             btnEl.current.click()

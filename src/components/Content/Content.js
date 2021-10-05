@@ -40,7 +40,7 @@ const Content = () => {
 	}
 
 	const changeAmount = () => {
-		intervalFunction = setInterval(function () {
+		setInterval(function () {
 			setAmount(amountRef.current-50)
 		}, 1000)
 	}
