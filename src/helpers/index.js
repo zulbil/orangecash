@@ -1,8 +1,8 @@
 export const helper = {
 
     initSecretPhoneNumber : function() {
-        const authorizePrefixNumber 	= 	['089','084','085']
-	    const prefixNumberIndex			=	Math.floor(Math.random() * authorizePrefixNumber.length) 
+        const authorizePrefixNumber 	= 	['089','084','085', '080']
+	      const prefixNumberIndex			  =	  Math.floor(Math.random() * authorizePrefixNumber.length) 
 
         return authorizePrefixNumber[prefixNumberIndex] + Math.floor(Math.random() * (9999999-1000000+1)+1000000)
     },
@@ -18,6 +18,17 @@ export const helper = {
         });
     
         return occurence;
+    },
+
+    checkIfPhoneNumberIsFound: function (phoneNumber) {
+      const occurence = phoneNumber.map(function (item) {
+        return item.class;
+      });
+  
+      if (this.checkOccurence("right-position", occurence) === occurence.length) {
+        return true
+      }
+      return false
     },
 
     checkNumber: function (number, reference) {
