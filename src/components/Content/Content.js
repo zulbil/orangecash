@@ -48,8 +48,8 @@ const Content = () => {
 		if( counter === 7 || amount === 0) {
 			alert('Vous avez perdu')
 		}
-
 	}
+
 
 	useEffect(() => {
 		console.log(counter)
