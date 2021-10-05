@@ -23,17 +23,11 @@ const Content = () => {
 		const gridNumber 		= 	phoneNumbers
 		gridNumber[counter] 	= 	newPhoneNumber
 		setPhoneNumbers(gridNumber)
-		checkResult(newPhoneNumber)
+		setWinGame(checkResult(newPhoneNumber))
 	}
 
 	const checkResult = (newPhoneNumber) => {
-		if (counter < 7) {
-			if(helper.checkIfPhoneNumberIsFound(newPhoneNumber)) {
-				alert('Numéro trouvé!!!');
-			}
-		} else {
-			alert('Votre partie est terminé !!!')
-		}
+		return helper.checkIfPhoneNumberIsFound(newPhoneNumber)
 	}
 
 	const startGame = () =>  {
@@ -47,9 +41,22 @@ const Content = () => {
 		}, 1000)
 	}
 
+	const showMessage = () => {
+		if(winGame) {
+			alert('Vous avez gagné')
+		}
+		if( counter === 7 || amount === 0) {
+			alert('Vous avez perdu')
+		}
+
+	}
+
 	useEffect(() => {
-		console.log(counter);
-	}, [counter])
+		console.log(counter)
+		console.log(amount)
+		console.log(winGame)
+		showMessage()
+	}, [counter, amount, winGame])
 
 
     return (
