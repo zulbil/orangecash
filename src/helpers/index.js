@@ -22,7 +22,7 @@ export const helper = {
 
     checkIfPhoneNumberIsFound: function (phoneNumber) {
       const occurence = phoneNumber.map(function (item) {
-        return item.class;
+        return item.classStyle;
       });
   
       if (this.checkOccurence("right-position", occurence) === occurence.length) {
