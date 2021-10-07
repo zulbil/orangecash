@@ -3,7 +3,7 @@ import AddNumber from './../AddNumber'
 import { InitialGridItems } from './../Grid/initialGridItems'
 import { useState, useRef, useEffect } from 'react' 
 import { helper } from './../../helpers'
-import CustomModal from '../Modal'
+import CustomModal from '../CustomModal'
 
 const Content = () => {
 
@@ -51,12 +51,12 @@ const Content = () => {
 
 	const showMessage = () => {
 		if(winGame) {
-			setMessage('Vous avez gagné')
+			setMessage('success')
 			setShowModal(true)
 			stopGame()
 		}
 		if( counter === 7 || amount === 0) {
-			setMessage('Vous avez perdu')
+			setMessage('fail')
 			setShowModal(true)
 			stopGame()
 		}
@@ -105,7 +105,7 @@ const Content = () => {
 					<AddNumber onAdd={submitPhoneNumber} start={start} />
 					<Grid phoneNumbers={phoneNumbers} />
 				</div>
-				<CustomModal display={showModal} message={message} />
+				<CustomModal display={showModal} message={message} secret={secretPhoneNumber} amount={amount} />
 			</div>
 		</div>
     )
