@@ -1,7 +1,7 @@
 # ORANGECASH
 
 This project is a game made in REACT.JS where the main goal is to find a secret orange phone number. 
-A orange phone number has 10 digits and start with 085, 080, 080, 089.  
+An orange phone number has 10 digits and start with 085, 080, 080, 089.  
 
 During the game you have 8 attempts and money that decreases as time goes by. When you type in a number you will find different colors on the boxes according to different cases.
 
