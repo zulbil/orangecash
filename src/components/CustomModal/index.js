@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import './index.css'
 
 
-const CustomModal = ({ display, message }) => {
+const CustomModal = ({ display, message, secret, amount }) => {
 
     const btnEl             =   useRef(null) 
     const [show, setShow]   =   useState(false) 
@@ -31,9 +31,22 @@ const CustomModal = ({ display, message }) => {
 
         <Modal show={show} backdrop="static" onHide={handleClose}>
             <Modal.Header closeButton>
-                <Modal.Title>Modal heading</Modal.Title>
+                <Modal.Title>
+                    {(message === 'success') ? 'Vous avez gagné' : 'Vous avez perdu'}
+                </Modal.Title>
             </Modal.Header>
-            <Modal.Body><p>{message}</p></Modal.Body>
+            <Modal.Body>
+                {
+                    (message === 'success') ?
+                    (<p>Vous pouvez repartir avec un montant de <strong className>{amount}$</strong></p>) :
+                    (   
+                        <>
+                            <p>La partie est terminée! Vous n'avez pas pu trouver le numéro secret.</p>
+                            <p>Le numéro secret orange à trouver était : <strong className=''>{secret}</strong></p>
+                        </>
+                    )
+                }
+            </Modal.Body>
             <Modal.Footer>
                 <Button variant="secondary" onClick={handleClose}>
                     Fermer
